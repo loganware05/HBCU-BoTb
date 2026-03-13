@@ -1,16 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import {
-  AlertCircle,
-  Lightbulb,
-  TrendingUp,
-  ArrowRight,
-  type LucideIcon,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { appConfig } from '../config/app.config'
 import { useLogin } from '../hooks/useAuth'
 import { Button } from '../components/ui/Button'
-
-const iconMap: Record<string, LucideIcon> = { AlertCircle, Lightbulb, TrendingUp }
 
 export default function Landing() {
   const navigate = useNavigate()
@@ -49,7 +41,7 @@ export default function Landing() {
       <section className="mx-auto max-w-4xl px-6 pt-20 pb-24 text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700">
           <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
-          Built at HBCU Battle of the Brains
+          HBCU Battle of the Brains 2026
         </div>
 
         <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-gray-900 leading-[1.1] sm:text-6xl">
@@ -81,64 +73,11 @@ export default function Landing() {
             {appConfig.landing.ctaSecondary}
           </Button>
         </div>
-
-        {/* Social proof */}
-        <p className="mt-6 text-sm text-gray-400">
-          340+ founders on the waitlist · Built in 24 hours
-        </p>
-      </section>
-
-      {/* Feature sections */}
-      <section className="border-t border-gray-100 bg-gray-50 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 md:grid-cols-3">
-            {appConfig.landing.sections.map(section => {
-              const Icon = iconMap[section.icon] ?? TrendingUp
-              return (
-                <div key={section.id} className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                    <Icon size={24} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
-                  <p className="mt-2 text-sm text-gray-500 leading-relaxed">{section.body}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Ready to take this to market?
-          </h2>
-          <p className="mt-4 text-gray-500">
-            All the infrastructure is here. Edit{' '}
-            <code className="rounded bg-gray-100 px-1.5 py-0.5 text-sm font-mono text-indigo-600">
-              app.config.ts
-            </code>{' '}
-            and the whole product updates.
-          </p>
-          <div className="mt-8">
-            {appConfig.demoMode.enabled ? (
-              <Button size="lg" onClick={handleStartDemo} loading={login.isPending}>
-                {appConfig.landing.ctaPrimary}
-                <ArrowRight size={18} className="ml-1" />
-              </Button>
-            ) : (
-              <Button size="lg" onClick={() => navigate('/login')}>
-                Sign in to get started
-              </Button>
-            )}
-          </div>
-        </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 py-8">
-        <p className="text-center text-sm text-gray-400">
+      <footer className="border-t border-gray-200 bg-gray-50 py-8">
+        <p className="text-center text-sm text-gray-500">
           © 2026 {appConfig.productName} · {appConfig.tagline}
         </p>
       </footer>

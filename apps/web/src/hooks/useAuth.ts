@@ -31,7 +31,7 @@ export function useLogin() {
       authStore.setSession(session)
       queryClient.clear()
       toast.success(`Welcome back, ${session.user.name.split(' ')[0]}!`)
-      navigate('/dashboard')
+      navigate('/dashboard', { replace: true })
     },
     onError: (err: Error) => {
       toast.error(err.message)

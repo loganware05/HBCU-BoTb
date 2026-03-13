@@ -5,16 +5,15 @@
 
 export const appConfig = {
   // ─── Brand ────────────────────────────────────────────────
-  productName: 'LaunchPad',
-  tagline: 'From idea to traction — faster.',
-  logoText: 'LP',
+  productName: 'Shop.py',
+  tagline: 'GEO Analytics for AI-Driven Commerce',
+  logoText: 'SP',
   description:
-    'LaunchPad helps founders track every opportunity, initiative, and milestone from pitch to product.',
+    'B2B SaaS platform that tracks, measures, and optimizes how products appear in AI-generated shopping results through Generative Engine Optimization (GEO).',
 
   // ─── Colors (Tailwind CSS variable values — RGB without parens) ───
-  // These get injected as CSS vars used by tailwind brand-* classes
   brand: {
-    primaryHex: '#6366f1',   // indigo-500 — change to match your pitch
+    primaryHex: '#6366f1',
     cssVars: {
       '--brand-50':  '238 242 255',
       '--brand-100': '224 231 255',
@@ -31,36 +30,35 @@ export const appConfig = {
 
   // ─── Navigation ───────────────────────────────────────────
   nav: [
-    { label: 'Dashboard',     path: '/dashboard',  icon: 'LayoutDashboard' },
-    { label: 'Opportunities', path: '/entities',   icon: 'Target' },
-    { label: 'Settings',      path: '/settings',   icon: 'Settings' },
+    { label: 'Dashboard', path: '/dashboard', icon: 'LayoutDashboard' },
+    { label: 'Settings', path: '/settings', icon: 'Settings' },
   ],
 
-  // ─── Feature flags (flip to false to hide in UI) ──────────
+  // ─── Feature flags ───────────────────────────────────────
   features: {
-    scoring:       true,   // score/0-100 field on entities
-    deadlines:     true,   // deadline picker
-    tags:          true,   // tag chips
-    search:        true,   // search bar on entity list
-    demoReset:     true,   // "Reset Demo Data" button in Settings
-    aiSuggestions: false,  // stub for future AI feature
-    realtime:      false,  // stub for future websocket feature
+    scoring:       true,
+    deadlines:     true,
+    tags:          true,
+    search:        true,
+    demoReset:     true,
+    aiSuggestions: false,
+    realtime:      false,
   },
 
   // ─── Demo mode ────────────────────────────────────────────
   demoMode: {
     enabled: import.meta.env.VITE_DEMO_MODE === 'true',
-    email: 'demo@pitch.dev',
+    email: 'homedepot@pitch.dev',
     password: 'demo1234',
     badgeText: 'Demo Mode',
     ctaLabel: 'Start Demo',
   },
 
-  // ─── Entity (your core pitch object) ─────────────────────
+  // ─── Entity (core pitch object) ───────────────────────────
   entity: {
-    singular: 'Opportunity',
-    plural: 'Opportunities',
-    createLabel: 'New Opportunity',
+    singular: 'Brand',
+    plural: 'Brands',
+    createLabel: 'New Brand',
     icon: 'Target',
     statusLabels: {
       active:      'Active',
@@ -99,31 +97,44 @@ export const appConfig = {
 
   // ─── Landing page ─────────────────────────────────────────
   landing: {
-    headline: 'Turn ideas into\nmomentum.',
+    headline: 'The New Front Door:\nAI Product Discovery.',
     subheadline:
-      'LaunchPad gives your team one place to track every opportunity, score your best bets, and ship faster.',
+      'Shop.py helps brands track, measure, and optimize how their products appear in AI-generated shopping results — before competitors do.',
     ctaPrimary:   'Start Demo',
     ctaSecondary: 'Learn More',
     sections: [
       {
         id: 'problem',
         title: 'The problem',
-        body: 'Great ideas get lost in spreadsheets, Slack threads, and sticky notes. Founders waste hours on coordination instead of execution.',
+        body: 'Brands are invisible in AI results with no tools to measure or act on it. Traditional search rankings no longer reflect true demand when purchase decisions happen inside ChatGPT or Gemini.',
         icon: 'AlertCircle',
       },
       {
         id: 'solution',
         title: 'The solution',
-        body: 'LaunchPad brings all your opportunities into one scored, prioritized pipeline — so your team always knows what to work on next.',
+        body: 'GEO analytics dashboard plus ethics and hallucination monitoring, powered by real consumer behavioral data — not bot simulations.',
         icon: 'Lightbulb',
       },
       {
         id: 'traction',
         title: 'Traction',
-        body: '340+ founders on the waitlist. Built in 24 hours at HBCU Battle of the Brains.',
+        body: 'GEO market valued at $886M (2024), projected $7.32B by 2031 (34% CAGR). HBCU Battle of the Brains 2026.',
         icon: 'TrendingUp',
       },
     ],
+  },
+
+  // ─── Share of Voice (demo mode — no server) ────────────────
+  sov: {
+    brand: 'Shop.py',
+  },
+
+  // ─── Client brand (post-login dashboard) ───────────────────
+  clientBrand: {
+    productName: 'The Home Depot',
+    logoText: 'HD',
+    primaryHex: '#F96302',
+    description: 'AI visibility analytics for The Home Depot.',
   },
 } as const
 

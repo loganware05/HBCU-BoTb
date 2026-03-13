@@ -59,7 +59,7 @@ pnpm db:migrate   # runs prisma migrate dev
 pnpm db:seed      # creates demo user + 10 demo entities
 ```
 
-Demo credentials: **demo@pitch.dev** / **demo1234**
+Demo credentials: **homedepot@pitch.dev** / **demo1234**
 
 ### 6. Run everything
 
